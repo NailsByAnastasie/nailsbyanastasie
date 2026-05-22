@@ -116,19 +116,6 @@ h2 {
     transform: scale(0.98);
 }
 
-/* La Flèche (Image) */
-.rdv-arrow {
-    position: absolute;
-    width: 60px;
-    top: -50px;
-    right: 5px;
-    /* On change la couleur de la flèche SVG noire via un filtre CSS pour la rendre rose poudré */
-    filter: invert(75%) sepia(16%) saturate(666%) hue-rotate(313deg) brightness(91%) contrast(93%);
-    transform: rotate(20deg);
-    /* Ajustement de l'angle */
-    z-index: 10;
-}
-
 /* --- RESEAUX SOCIAUX --- */
 .social-section {
     display: flex;
@@ -302,4 +289,52 @@ footer {
         /* 3 colonnes sur PC */
         gap: 20px;
     }
+}
+
+/* --- LIEN INSTAGRAM (Sous la galerie) --- */
+.more-photos {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.more-photos a {
+    color: #a0a0a0;
+    /* Gris clair discret */
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 0.8rem;
+    /* Texte beaucoup plus petit */
+    font-style: italic;
+    /* Touche d'élégance */
+    transition: color 0.2s ease;
+}
+
+/* --- BOUTON AVIS GOOGLE --- */
+.btn-google-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--white);
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-top: 20px;
+    border: 1px solid var(--accent-rose);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+.btn-google-reviews i {
+    font-size: 1.2rem;
+    /* Optionnel : tu peux mettre la couleur de l'icône Google en remplaçant 'inherit' par '#EA4335' */
+    color: inherit;
+}
+
+.btn-google-reviews:hover {
+    background-color: var(--accent-light);
+    transform: translateY(-2px);
 }
