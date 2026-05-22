@@ -1,0 +1,305 @@
+/* VARIABLES GLOBALES (Couleurs douces et contrastées) */
+:root {
+    --bg-page: #fbf9f6;
+    /* Fond global très légèrement crème */
+    --text-dark: #2c2c2c;
+    /* Noir doux pour la lecture */
+    --accent-rose: #d6a9a7;
+    /* Rose poudré principal */
+    --accent-light: #f4e9e8;
+    /* Rose très clair pour les fonds */
+    --white: #ffffff;
+    --font-title: 'Playfair Display', serif;
+    --font-text: 'Inter', sans-serif;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+    font-family: var(--font-text);
+    line-height: 1.6;
+    padding: 20px 20px 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* TYPOGRAPHIE */
+h1,
+h2,
+h3 {
+    font-family: var(--font-title);
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* UTILITAIRES */
+.card {
+    background-color: var(--white);
+    padding: 30px 25px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    /* Ombre très légère */
+    border: 1px solid rgba(214, 169, 167, 0.2);
+    /* Bordure subtile rose */
+}
+
+/* --- HEADER & PROFIL --- */
+.hero-section {
+    text-align: center;
+    padding: 30px 0 40px;
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px auto;
+    display: block;
+    border: 4px solid var(--accent-rose);
+    padding: 4px;
+    /* Crée un double contour avec le fond blanc */
+    background-color: var(--white);
+    box-shadow: 0 8px 20px rgba(214, 169, 167, 0.25);
+}
+
+.hero-section h1 {
+    font-size: 2.6rem;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+/* --- BOUTON PLANITY & FLÈCHE --- */
+.rdv-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.btn-planity {
+    display: block;
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 16px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-planity:active {
+    transform: scale(0.98);
+}
+
+/* La Flèche (Image) */
+.rdv-arrow {
+    position: absolute;
+    width: 60px;
+    top: -50px;
+    right: 5px;
+    /* On change la couleur de la flèche SVG noire via un filtre CSS pour la rendre rose poudré */
+    filter: invert(75%) sepia(16%) saturate(666%) hue-rotate(313deg) brightness(91%) contrast(93%);
+    transform: rotate(20deg);
+    /* Ajustement de l'angle */
+    z-index: 10;
+}
+
+/* --- RESEAUX SOCIAUX --- */
+.social-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: var(--white);
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: 500;
+    font-size: 1.05rem;
+    border: 1px solid var(--accent-rose);
+    transition: all 0.2s ease;
+}
+
+.social-btn i {
+    font-size: 1.3rem;
+}
+
+.social-btn:hover {
+    background-color: var(--accent-light);
+}
+
+/* --- À PROPOS --- */
+.about-section p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* --- GALERIE (Grille Propre) --- */
+.gallery-section {
+    margin-bottom: 40px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    /* Espace entre les photos */
+}
+
+.photo-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Force le format carré Instagram */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* --- TARIFS --- */
+.category-title {
+    font-size: 1.15rem;
+    color: var(--accent-rose);
+    margin: 30px 0 15px 0;
+    border-bottom: 1px solid var(--accent-light);
+    padding-bottom: 8px;
+}
+
+.pricing-section h2+.category-title {
+    margin-top: 10px;
+}
+
+.pricing-list {
+    list-style: none;
+}
+
+.pricing-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed #eaeaea;
+    font-size: 0.95rem;
+}
+
+.pricing-list li:last-child {
+    border-bottom: none;
+}
+
+.service {
+    font-weight: 400;
+    color: #444;
+}
+
+.price {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.payment-methods {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    background-color: var(--accent-light);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 30px;
+    font-weight: 500;
+}
+
+/* --- INFOS & HORAIRES --- */
+.hours-card ul {
+    list-style: none;
+}
+
+.hours-card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+}
+
+.hours-card li:last-child {
+    border-bottom: none;
+}
+
+.transport-info {
+    background-color: var(--accent-light);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.transport-info p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.transport-info p:last-child {
+    margin-bottom: 0;
+}
+
+.transport-info i {
+    color: var(--accent-rose);
+    font-size: 1.1rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px 0 40px;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* RESPONSIVE DESKTOP */
+@media (min-width: 768px) {
+    body {
+        max-width: 800px;
+        padding-top: 40px;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 colonnes sur PC */
+        gap: 20px;
+    }
+}
