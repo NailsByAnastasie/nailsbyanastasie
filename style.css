@@ -1,13 +1,17 @@
-/* VARIABLES GLOBALES (Couleurs douces et contrastées) */
+/* FONT LOCALE */
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* VARIABLES GLOBALES */
 :root {
     --bg-page: #fbf9f6;
-    /* Fond global très légèrement crème */
     --text-dark: #2c2c2c;
-    /* Noir doux pour la lecture */
     --accent-rose: #d6a9a7;
-    /* Rose poudré principal */
     --accent-light: #f4e9e8;
-    /* Rose très clair pour les fonds */
     --white: #ffffff;
     --font-title: 'Playfair Display', serif;
     --font-text: 'Inter', sans-serif;
@@ -52,9 +56,33 @@ h2 {
     border-radius: 20px;
     margin-bottom: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    /* Ombre très légère */
     border: 1px solid rgba(214, 169, 167, 0.2);
-    /* Bordure subtile rose */
+}
+
+/* --- ANIMATIONS SCROLL --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ICONES LOCALES --- */
+.icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.icon-small {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
 }
 
 /* --- HEADER & PROFIL --- */
@@ -72,7 +100,6 @@ h2 {
     display: block;
     border: 4px solid var(--accent-rose);
     padding: 4px;
-    /* Crée un double contour avec le fond blanc */
     background-color: var(--white);
     box-shadow: 0 8px 20px rgba(214, 169, 167, 0.25);
 }
@@ -89,7 +116,7 @@ h2 {
     margin-bottom: 35px;
 }
 
-/* --- BOUTON PLANITY & FLÈCHE --- */
+/* --- BOUTON PLANITY --- */
 .rdv-wrapper {
     position: relative;
     display: flex;
@@ -108,6 +135,7 @@ h2 {
     font-weight: 600;
     font-size: 1.1rem;
     width: 100%;
+    text-align: center;
     transition: transform 0.2s ease, background-color 0.2s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
@@ -140,10 +168,6 @@ h2 {
     transition: all 0.2s ease;
 }
 
-.social-btn i {
-    font-size: 1.3rem;
-}
-
 .social-btn:hover {
     background-color: var(--accent-light);
 }
@@ -156,7 +180,7 @@ h2 {
     text-align: center;
 }
 
-/* --- GALERIE (Grille Propre) --- */
+/* --- GALERIE --- */
 .gallery-section {
     margin-bottom: 40px;
 }
@@ -165,25 +189,73 @@ h2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    /* Espace entre les photos */
 }
 
 .photo-grid img {
     width: 100%;
     aspect-ratio: 1 / 1;
-    /* Force le format carré Instagram */
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* --- TARIFS --- */
+.photo-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* --- MODAL GALERIE --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: var(--white);
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 1001;
+}
+
+/* --- PRESTATIONS & TARIFS --- */
+.pricing-section h2 {
+    margin-bottom: 5px;
+}
+
 .category-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--accent-rose);
-    margin: 30px 0 15px 0;
-    border-bottom: 1px solid var(--accent-light);
+    margin: 28px 0 14px 0;
     padding-bottom: 8px;
+    border-bottom: 1px solid var(--accent-light);
 }
 
 .pricing-section h2+.category-title {
@@ -197,9 +269,10 @@ h2 {
 .pricing-list li {
     display: flex;
     justify-content: space-between;
-    padding: 12px 0;
+    align-items: center;
+    padding: 14px 0;
     border-bottom: 1px dashed #eaeaea;
-    font-size: 0.95rem;
+    gap: 12px;
 }
 
 .pricing-list li:last-child {
@@ -209,11 +282,28 @@ h2 {
 .service {
     font-weight: 400;
     color: #444;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.price-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    white-space: nowrap;
 }
 
 .price {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.duration {
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: 400;
 }
 
 .payment-methods {
@@ -256,57 +346,12 @@ h2 {
 .transport-info p {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 10px;
 }
 
 .transport-info p:last-child {
     margin-bottom: 0;
-}
-
-.transport-info i {
-    color: var(--accent-rose);
-    font-size: 1.1rem;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px 0 40px;
-    font-size: 0.85rem;
-    color: #999;
-}
-
-/* RESPONSIVE DESKTOP */
-@media (min-width: 768px) {
-    body {
-        max-width: 800px;
-        padding-top: 40px;
-    }
-
-    .photo-grid {
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 colonnes sur PC */
-        gap: 20px;
-    }
-}
-
-/* --- LIEN INSTAGRAM (Sous la galerie) --- */
-.more-photos {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.more-photos a {
-    color: #a0a0a0;
-    /* Gris clair discret */
-    font-weight: 400;
-    text-decoration: none;
-    font-size: 0.8rem;
-    /* Texte beaucoup plus petit */
-    font-style: italic;
-    /* Touche d'élégance */
-    transition: color 0.2s ease;
 }
 
 /* --- BOUTON AVIS GOOGLE --- */
@@ -328,13 +373,47 @@ footer {
     transition: all 0.2s ease;
 }
 
-.btn-google-reviews i {
-    font-size: 1.2rem;
-    /* Optionnel : tu peux mettre la couleur de l'icône Google en remplaçant 'inherit' par '#EA4335' */
-    color: inherit;
-}
-
 .btn-google-reviews:hover {
     background-color: var(--accent-light);
     transform: translateY(-2px);
+}
+
+/* --- LIEN INSTAGRAM --- */
+.more-photos {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.more-photos a {
+    color: #a0a0a0;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-style: italic;
+    transition: color 0.2s ease;
+}
+
+.more-photos a:hover {
+    color: var(--accent-rose);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px 0 40px;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* RESPONSIVE DESKTOP */
+@media (min-width: 768px) {
+    body {
+        max-width: 800px;
+        padding-top: 40px;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
 }

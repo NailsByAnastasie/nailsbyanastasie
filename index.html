@@ -11,22 +11,19 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="hero-section">
+    <header class="hero-section fade-in">
         <img src="./img/1.jpeg" alt="Anastasie - Prothésiste Ongulaire" class="profile-pic">
 
         <h1>NailsByAnastasie</h1>
-        <p class="subtitle">La touche beauté indispensable </p>
+        <p class="subtitle">La touche beauté indispensable</p>
 
         <div class="rdv-wrapper">
             <a href="https://www.planity.com/mj-coiffure-13090-aix-en-provence" target="_blank"
@@ -34,84 +31,160 @@
         </div>
     </header>
 
-    <section class="social-section">
+    <section class="social-section fade-in">
         <a href="https://www.instagram.com/nailsbyanastasie/" target="_blank" class="social-btn">
-            <i class="fa-brands fa-instagram"></i>
+            <img src="./icons/instagram.png" alt="Instagram" class="icon">
             <span>Instagram</span>
         </a>
         <a href="https://www.tiktok.com/@nailsbyanastasie" target="_blank" class="social-btn">
-            <i class="fa-brands fa-tiktok"></i>
+            <img src="./icons/tik-tok.png" alt="TikTok" class="icon">
             <span>TikTok</span>
         </a>
         <a href="https://www.facebook.com/profile.php?id=61584689696595" target="_blank" class="social-btn">
-            <i class="fa-brands fa-facebook"></i>
-            <span>FaceBook</span>
+            <img src="./icons/facebook.png" alt="Facebook" class="icon">
+            <span>Facebook</span>
         </a>
     </section>
 
-    <section class="about-section card">
+    <section class="about-section card fade-in">
         <h2>À propos de moi</h2>
         <p>
             Passionnée depuis toujours par l'univers de la beauté et particulièrement de l'onglerie, je suis une jeune
             Aixoise de 26 ans. Après un premier parcours dans le domaine administratif, j'ai décidé de suivre mon cœur
             et de me lancer pleinement dans ce qui m'anime au quotidien : prendre soin de vous et sublimer vos mains.
             Rigoureuse et perfectionniste, je mets un point d'honneur à vous chouchouter et à réaliser des poses sur
-            mesure qui vous ressemblent
+            mesure qui vous ressemblent.
         </p>
     </section>
 
-    <section class="gallery-section">
+    <section class="gallery-section fade-in">
         <h2>Mes Réalisations</h2>
         <div class="photo-grid">
-            <img src="./img/2.jpeg" alt="Réalisation Ongles 1">
-            <img src="./img/3.jpeg" alt="Réalisation Ongles 2">
-            <img src="./img/4.jpeg" alt="Réalisation Ongles 3">
-            <img src="./img/5.jpeg" alt="Réalisation Ongles 4">
-            <img src="./img/6.jpeg" alt="Réalisation Ongles 5">
-            <img src="./img/7.jpeg" alt="Réalisation Ongles 6">
+            <img src="./img/2.jpeg" alt="Réalisation Ongles 1" class="gallery-img">
+            <img src="./img/3.jpeg" alt="Réalisation Ongles 2" class="gallery-img">
+            <img src="./img/4.jpeg" alt="Réalisation Ongles 3" class="gallery-img">
+            <img src="./img/5.jpeg" alt="Réalisation Ongles 4" class="gallery-img">
+            <img src="./img/6.jpeg" alt="Réalisation Ongles 5" class="gallery-img">
+            <img src="./img/7.jpeg" alt="Réalisation Ongles 6" class="gallery-img">
         </div>
         <div class="more-photos">
-            <a>Plus de photos sur mon Instagram ☺️</a>
-            // img cascade with light linear gradient ?
+            <a href="https://www.instagram.com/nailsbyanastasie/" target="_blank">Plus de photos sur mon Instagram
+                ☺️</a>
         </div>
     </section>
 
-    <section class="pricing-section card">
+    <!-- Modal galerie -->
+    <div class="modal-overlay" id="galleryModal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <img src="" alt="Photo agrandie" class="modal-img" id="modalImg">
+    </div>
+
+    <section class="pricing-section card fade-in">
         <h2>Prestations & Tarifs</h2>
 
         <h3 class="category-title">Tarifs de lancement</h3>
         <ul class="pricing-list">
-            <li><span class="service">Semi permanent + couleur classique mains</span><span class="price">
-                    25€ | 1H20</span>
+            <li>
+                <span class="service">Semi permanent + couleur classique mains</span>
+                <span class="price-info">
+                    <span class="price">25€</span>
+                    <span class="duration">1h20</span>
+                </span>
             </li>
-            <li><span class="service">Semi permanent classique + nail art mains</span><span class="price">27€ |
-                    1h35</span>
+            <li>
+                <span class="service">Semi permanent classique + nail art mains</span>
+                <span class="price-info">
+                    <span class="price">27€</span>
+                    <span class="duration">1h35</span>
+                </span>
             </li>
-            <li><span class="service">Gainage + couleur classique mains</span><span class="price">30€ | 1h45</span></li>
-            <li><span class="service">Gainage + couleur + nail art </span><span class="price">33€ | 2h00</span></li>
+            <li>
+                <span class="service">Gainage + couleur classique mains</span>
+                <span class="price-info">
+                    <span class="price">30€</span>
+                    <span class="duration">1h45</span>
+                </span>
+            </li>
+            <li>
+                <span class="service">Gainage + couleur + nail art</span>
+                <span class="price-info">
+                    <span class="price">33€</span>
+                    <span class="duration">2h00</span>
+                </span>
+            </li>
         </ul>
 
-        <h3 class="category-title">Dépose classique </h3>
+        <h3 class="category-title">Dépose</h3>
         <ul class="pricing-list">
-            <li><span class="service">Dépose Semi-permanent complète</span><span class="price">18€ | 35min</span></li>
-            <li><span class="service">Dépose Semi-permanent + repose </span><span class="price">28€ | 1h45</span></li>
-            <li><span class="service">Dépose gainage complet</span><span class="price">18€ | 45min</span></li>
-            <li><span class="service">Dépose gainage + repose complet</span><span class="price">35€ | 2h15</span></li>
+            <li>
+                <span class="service">Dépose Semi-permanent complète</span>
+                <span class="price-info">
+                    <span class="price">18€</span>
+                    <span class="duration">35min</span>
+                </span>
+            </li>
+            <li>
+                <span class="service">Dépose Semi-permanent + repose</span>
+                <span class="price-info">
+                    <span class="price">28€</span>
+                    <span class="duration">1h45</span>
+                </span>
+            </li>
+            <li>
+                <span class="service">Dépose gainage complet</span>
+                <span class="price-info">
+                    <span class="price">18€</span>
+                    <span class="duration">45min</span>
+                </span>
+            </li>
+            <li>
+                <span class="service">Dépose gainage + repose complet</span>
+                <span class="price-info">
+                    <span class="price">35€</span>
+                    <span class="duration">2h15</span>
+                </span>
+            </li>
         </ul>
 
-        <h3 class="category-title">Rallongement </h3>
+        <h3 class="category-title">Rallongement</h3>
         <ul class="pricing-list">
-            <li><span class="service">GEL technique demi-capsules </span><span class="price">40€ | 2h45</span></li>
-            <li><span class="service">GEL technique Américaines (capsules entière)</span><span class="price">37€ |
-                    2h00</span>
+            <li>
+                <span class="service">GEL technique demi-capsules</span>
+                <span class="price-info">
+                    <span class="price">40€</span>
+                    <span class="duration">2h45</span>
+                </span>
             </li>
-            <li><span class="service">Réparation (ongle cassé)</span><span class="price">3€ | 30min</span></li>
+            <li>
+                <span class="service">GEL technique Américaines (capsules entière)</span>
+                <span class="price-info">
+                    <span class="price">37€</span>
+                    <span class="duration">2h00</span>
+                </span>
+            </li>
+            <li>
+                <span class="service">Réparation (ongle cassé)</span>
+                <span class="price-info">
+                    <span class="price">3€</span>
+                    <span class="duration">30min</span>
+                </span>
+            </li>
         </ul>
 
         <h3 class="category-title">Décoration & Nail Art</h3>
         <ul class="pricing-list">
-            <li><span class="service">Babyboomer / French</span><span class="price">+ 10€</span></li>
-            <li><span class="service">Nail Art élaboré</span><span class="price">Sur devis message</span></li>
+            <li>
+                <span class="service">Babyboomer / French</span>
+                <span class="price-info">
+                    <span class="price">+ 10€</span>
+                </span>
+            </li>
+            <li>
+                <span class="service">Nail Art élaboré</span>
+                <span class="price-info">
+                    <span class="price">Sur devis</span>
+                </span>
+            </li>
         </ul>
 
         <div class="payment-methods">
@@ -119,14 +192,14 @@
         </div>
     </section>
 
-    <section class="info-section">
+    <section class="info-section fade-in">
         <div class="hours-card card">
             <h2>Horaires</h2>
             <ul>
                 <li><span>Lundi</span> <span>09:00 - 22:00</span></li>
                 <li><span>Mardi</span> <span>18:00 - 21:30</span></li>
                 <li><span>Mercredi</span> <span>18:00 - 21:30</span></li>
-                <li><span>Jeui</span> <span>18:00 - 21:30</span></li>
+                <li><span>Jeudi</span> <span>18:00 - 21:30</span></li>
                 <li><span>Vendredi</span> <span>15:00 - 22:00</span></li>
                 <li><span>Samedi</span> <span>09:00 - 22:00</span></li>
                 <li><span>Dimanche</span> <span>Fermé</span></li>
@@ -136,19 +209,20 @@
         <div class="location-card card">
             <h2>Où me trouver</h2>
             <div class="transport-info">
-                // NEW ICON
-                <p><i class="fa-solid fa-square-parking"></i> 535 av. du Club Hippique</p>
-                <p><i class="fa-solid fa-square-parking"></i> Plusieurs places réservées juste devant le salon</p>
-                <p><i class="fa-solid fa-bus"></i> Arrêt de bus juste en face</p>
+                <p><img src="./icons/map.png" alt="" class="icon-small"> 535 av. du Club Hippique, 13100 Aix-en-Provence
+                </p>
+                <p><img src="./icons/car.png" alt="" class="icon-small"> Plusieurs places réservées juste devant le
+                    salon</p>
+                <p><img src="./icons/bus.png" alt="" class="icon-small"> Arrêt de bus juste en face</p>
             </div>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.3150257002014!2d5.445209215495576!3d43.5263228652391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c98d9e262c3e17%3A0xc3c9ba8b8f2c3a50!2sAix-en-Provence!5e0!3m2!1sfr!2sfr!4v1684930000000!5m2!1sfr!2sfr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.5!2d5.4375!3d43.5105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c98db5a29a3f67%3A0x4e5b0e1f2a3c4d5e!2s535+Av.+du+Club+Hippique%2C+13100+Aix-en-Provence!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
                 width="100%" height="250" style="border:0; border-radius: 12px; margin-top: 15px;" allowfullscreen=""
                 loading="lazy">
             </iframe>
 
             <a href="https://maps.app.goo.gl/wSW2Q172oHiyVnyWA" target="_blank" class="btn-google-reviews">
-                <i class="fa-brands fa-google"></i> Voir mes avis Google
+                <img src="./icons/google.png" alt="Google" class="icon-small"> Voir mes avis Google
             </a>
         </div>
     </section>
@@ -157,6 +231,7 @@
         <p>© 2026 NailsByAnastasie. Tous droits réservés.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
