@@ -35,6 +35,7 @@ galleryImages.forEach(img => {
 function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
+    setTimeout(() => { modalImg.src = ''; }, 300);
 }
 
 modalClose.addEventListener('click', closeModal);
