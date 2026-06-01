@@ -27,7 +27,6 @@ const modalDots = document.getElementById('modalDots');
 
 let galleryImages = [];
 let currentIndex = 0;
-let touchStartX = 0;
 
 function getVisibleImages() {
     return Array.from(document.querySelectorAll('.gallery-img')).filter(
@@ -115,15 +114,7 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') goTo(currentIndex + 1);
 });
 
-// Swipe mobile
-modal.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-}, { passive: true });
 
-modal.addEventListener('touchend', (e) => {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) goTo(currentIndex + (diff > 0 ? 1 : -1));
-});
 
 // --- TOGGLE MAINS / PIEDS ---
 const tabButtons = document.querySelectorAll('.tab-btn');
