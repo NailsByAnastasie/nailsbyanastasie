@@ -9,7 +9,7 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💅</text></svg>">
 
-    <link rel="stylesheet" href="style.css?v=1.3">
+    <link rel="stylesheet" href="style.css?v=1.5">
 </head>
 
 <body>
@@ -55,60 +55,116 @@
     <section class="gallery-section fade-in">
         <h2>Mes Réalisations</h2>
         <div class="photo-grid">
-            <img src="./img/2.jpeg" alt="Réalisation Ongles 1" class="gallery-img">
+            <img src="./img/16.jpeg" alt="Réalisation Ongles 1" class="gallery-img">
             <img src="./img/3.jpeg" alt="Réalisation Ongles 2" class="gallery-img">
-            <img src="./img/4.jpeg" alt="Réalisation Ongles 3" class="gallery-img">
+            <img src="./img/14.jpeg" alt="Réalisation Ongles 3" class="gallery-img">
             <img src="./img/5.jpeg" alt="Réalisation Ongles 4" class="gallery-img">
             <img src="./img/6.jpeg" alt="Réalisation Ongles 5" class="gallery-img">
             <img src="./img/7.jpeg" alt="Réalisation Ongles 6" class="gallery-img">
         </div>
-        <div class="more-photos">
-            <a href="https://www.instagram.com/nailsbyanastasie/" target="_blank">Plus de photos sur mon Instagram
-                ☺️</a>
+        <div class="photo-grid-extra" id="photoGridExtra">
+            <img src="./img/8.jpeg" alt="Réalisation Ongles 7" class="gallery-img extra-img" style="--i:0">
+            <img src="./img/9.jpeg" alt="Réalisation Ongles 8" class="gallery-img extra-img" style="--i:1">
+            <img src="./img/10.jpeg" alt="Réalisation Ongles 9" class="gallery-img extra-img" style="--i:2">
+            <img src="./img/11.jpeg" alt="Réalisation Ongles 10" class="gallery-img extra-img" style="--i:3">
+            <img src="./img/12.jpeg" alt="Réalisation Ongles 11" class="gallery-img extra-img" style="--i:4">
+            <img src="./img/13.jpeg" alt="Réalisation Ongles 12" class="gallery-img extra-img" style="--i:5">
+            <img src="./img/4.jpeg" alt="Réalisation Ongles 13" class="gallery-img extra-img" style="--i:6">
+            <img src="./img/15.jpeg" alt="Réalisation Ongles 14" class="gallery-img extra-img" style="--i:7">
+            <img src="./img/2.jpeg" alt="Réalisation Ongles 15" class="gallery-img extra-img" style="--i:8">
+            <img src="./img/17.jpeg" alt="Réalisation Ongles 16" class="gallery-img extra-img" style="--i:9">
+            <img src="./img/18.jpeg" alt="Réalisation Ongles 17" class="gallery-img extra-img" style="--i:10">
+            <img src="./img/19.jpeg" alt="Réalisation Ongles 18" class="gallery-img extra-img" style="--i:11">
+        </div>
+        <div class="voir-plus-wrapper">
+            <button class="btn-voir-plus" id="btnVoirPlus">Voir plus de mon travail 💅</button>
         </div>
     </section>
 
     <!-- Modal galerie -->
     <div class="modal-overlay" id="galleryModal">
         <button class="modal-close" id="modalClose">&times;</button>
+        <button class="modal-prev" id="modalPrev">&#8249;</button>
         <img src="" alt="Photo agrandie" class="modal-img" id="modalImg">
+        <button class="modal-next" id="modalNext">&#8250;</button>
+        <div class="modal-dots" id="modalDots"></div>
     </div>
 
     <section class="pricing-section card fade-in">
         <h2>Prestations & Tarifs</h2>
 
-        <div class="tab-toggle">
+        <div class="promo-banner">
+            <span class="promo-label">✨ Nouveauté</span>
+            <p><strong>Forfait duo Semi : MAINS + PIEDS</strong><br>Profitez d'une pose de semi mains + pieds réalisée
+                le même jour au tarif de <strong>45€</strong> <s>au lieu de 55€</s>. L'idéal pour être au top cet été
+                🤍💅</p>
+        </div>
+
+        <div class="tab-toggle" id="tabToggle" data-active="main">
+            <div class="tab-indicator"></div>
             <button class="tab-btn active" data-tab="main">✋ Mains</button>
             <button class="tab-btn" data-tab="pied">🦶 Pieds</button>
         </div>
 
         <!-- MAINS -->
         <div class="tab-content active" id="tab-main">
-            <h3 class="category-title">Dépose</h3>
+            <h3 class="category-title">Pose</h3>
             <ul class="pricing-list">
                 <li>
-                    <span class="service">Dépose Semi-permanent complète mains</span>
+                    <span class="service">Semi-permanent + couleur classique mains</span>
                     <span class="price-info">
-                        <span class="price">15€</span>
-                        <span class="duration">35min</span>
+                        <span class="price">25€</span>
+                        <span class="duration">1h20</span>
                     </span>
                 </li>
                 <li>
-                    <span class="service">Dépose Semi-permanent + repose mains</span>
+                    <span class="service">Gainage + couleur classique mains</span>
                     <span class="price-info">
-                        <span class="price">35€</span>
-                        <span class="duration">1h35</span>
+                        <span class="price">25€</span>
+                        <span class="duration">1h40</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="service">Gainage classique + nail art mains</span>
+                    <span class="price-info">
+                        <span class="price">30€</span>
+                        <span class="duration">2h</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="service">Semi-permanent classique + nail art mains</span>
+                    <span class="price-info">
+                        <span class="price">30€</span>
+                        <span class="duration">1h30</span>
+                    </span>
+                </li>
+            </ul>
+
+            <h3 class="category-title">Dépose</h3>
+            <ul class="pricing-list">
+                <li>
+                    <span class="service">Dépose semi-permanent complète mains</span>
+                    <span class="price-info">
+                        <span class="price">15€</span>
+                        <span class="duration">1h</span>
                     </span>
                 </li>
                 <li>
                     <span class="service">Dépose gainage complète mains</span>
                     <span class="price-info">
                         <span class="price">15€</span>
-                        <span class="duration">45min</span>
+                        <span class="duration">1h</span>
                     </span>
                 </li>
                 <li>
-                    <span class="service">Dépose gainage + repose complet</span>
+                    <span class="service">Dépose semi-permanent + repose mains</span>
+                    <span class="price-info">
+                        <span class="price">35€</span>
+                        <span class="duration">1h30</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="service">Dépose gainage + repose mains</span>
                     <span class="price-info">
                         <span class="price">35€</span>
                         <span class="duration">2h30</span>
@@ -119,31 +175,24 @@
             <h3 class="category-title">Rallongement</h3>
             <ul class="pricing-list">
                 <li>
-                    <span class="service">GEL technique demi-capsules</span>
+                    <span class="service">Rallongement gel demi-capsule</span>
                     <span class="price-info">
                         <span class="price">45€</span>
                         <span class="duration">2h30</span>
                     </span>
                 </li>
                 <li>
-                    <span class="service">GEL technique Américaines (capsules entière)</span>
+                    <span class="service">Rallongement gel pose américaine</span>
                     <span class="price-info">
                         <span class="price">45€</span>
-                        <span class="duration">2h00</span>
+                        <span class="duration">2h</span>
                     </span>
                 </li>
                 <li>
-                    <span class="service">Remplissage Rallongement Gel</span>
+                    <span class="service">Remplissage rallongement gel</span>
                     <span class="price-info">
                         <span class="price">40€</span>
-                        <span class="duration">2h00</span>
-                    </span>
-                </li>
-                <li>
-                    <span class="service">Réparation (ongle cassé)</span>
-                    <span class="price-info">
-                        <span class="price">3€</span>
-                        <span class="duration">30min</span>
+                        <span class="duration">2h</span>
                     </span>
                 </li>
             </ul>
@@ -167,37 +216,31 @@
 
         <!-- PIEDS -->
         <div class="tab-content" id="tab-pied">
-            <h3 class="category-title">Semi-permanent pieds</h3>
+            <h3 class="category-title">Pose semi-permanent pieds</h3>
             <ul class="pricing-list">
                 <li>
-                    <span class="service">Pose Semi-permanent pieds</span>
+                    <span class="service">Pose de semi + couleur classique pieds</span>
                     <span class="price-info">
                         <span class="price">30€</span>
-                        <span class="duration">1h00</span>
+                        <span class="duration">1h</span>
                     </span>
                 </li>
                 <li>
-                    <span class="service">Dépose + repose Semi-permanent pieds</span>
+                    <span class="service">Pose de semi + couleur + petit nail art pieds</span>
                     <span class="price-info">
-                        <span class="price">35€</span>
-                        <span class="duration">1h15</span>
-                    </span>
-                </li>
-                <li>
-                    <span class="service">Dépose Semi-permanent complète pieds</span>
-                    <span class="price-info">
-                        <span class="price">15€</span>
-                        <span class="duration">30min</span>
+                        <span class="price">30€</span>
+                        <span class="duration">1h30</span>
                     </span>
                 </li>
             </ul>
 
-            <h3 class="category-title">Décoration</h3>
+            <h3 class="category-title">Dépose pieds</h3>
             <ul class="pricing-list">
                 <li>
-                    <span class="service">Nail art élaboré pieds</span>
+                    <span class="service">Dépose semi seule pieds</span>
                     <span class="price-info">
-                        <span class="price">Sur devis</span>
+                        <span class="price">18€</span>
+                        <span class="duration">40min</span>
                     </span>
                 </li>
             </ul>
@@ -212,13 +255,13 @@
         <div class="hours-card card">
             <h2>Horaires</h2>
             <ul>
-                <li><span>Lundi</span> <span>09:00 - 22:00</span></li>
-                <li><span>Mardi</span> <span>18:00 - 21:30</span></li>
-                <li><span>Mercredi</span> <span>18:00 - 21:30</span></li>
-                <li><span>Jeudi</span> <span>18:00 - 21:30</span></li>
-                <li><span>Vendredi</span> <span>15:00 - 22:00</span></li>
-                <li><span>Samedi</span> <span>09:00 - 22:00</span></li>
-                <li><span>Dimanche</span> <span>Fermé</span></li>
+                <li><span>Lundi</span> <span>09:00 - 23:00</span></li>
+                <li><span>Mardi</span> <span>09:00 - 23:00</span></li>
+                <li><span>Mercredi</span> <span>09:00 - 23:00</span></li>
+                <li><span>Jeudi</span> <span>09:00 - 23:00</span></li>
+                <li><span>Vendredi</span> <span>09:00 - 23:00</span></li>
+                <li><span>Samedi</span> <span>09:00 - 23:00</span></li>
+                <li><span>Dimanche</span> <span>09:00 - 13:00</span></li>
             </ul>
         </div>
 
@@ -259,7 +302,7 @@
         <p>© 2026 NailsByAnastasie. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js?v=1.3"></script>
+    <script src="script.js?v=1.5"></script>
 </body>
 
 </html>
